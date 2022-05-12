@@ -5,7 +5,7 @@
   "repository": "https://github.com/codentell/detwitch.git",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@davatar/react": "^1.9.0",
     "add": "^2.0.6",
+    "axios": "^0.27.2",
     "moralis": "^1.7.0",
     "next": "^12.1.6",
     "react": "^18.1.0",
