@@ -1,21 +1,21 @@
 import React from "react";
-import ColorHash from "color-hash";
+import ColorHash from 'color-hash';
 
 const colorHash = new ColorHash({ saturation: 1.0 });
 
-export const stringToColour = (s: string): string => colorHash.hex(s);
+const stringToColour = (str: string): string => colorHash.hex(str);
 
-export const generateColours = (s: string): [string, string] => {
-    const s1 = s.substring(0, s.length / 2);
-    const s2 = s.substring(s.length / 2);
+const generateColours = (str: string): [string, string] => {
+    const s1 = str.substring(0, str.length / 2);
+    const s2 = str.substring(str.length / 2);
     const c1 = stringToColour(s1);
     const c2 = stringToColour(s2);
 
     return [c1, c2];
 };
 
-export const generateSVG = (s: string, size = 70) => {
-    const [c1, c2] = generateColours(s);
+const generateSVG = (str: string, size = 70) => {
+    const [c1, c2] = generateColours(str);
 
     return <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill={"none"} xmlns={"http://www.w3.org/2000/svg"}>
         <circle cx={`${size / 2}`} cy={`${size / 2}`} r={`${size / 2}`} fill={"url(#gradient)"} />
@@ -28,3 +28,5 @@ export const generateSVG = (s: string, size = 70) => {
     </svg>
 
 };
+
+export default generateSVG;

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Player  from './components/player';
-import Login from './components/login';
+import React, { useEffect, useState } from 'react';
+import Player  from '../components/player';
+import Login from '../components/login';
 import Davatar from '@davatar/react';
-import { useMoralis } from "react-moralis";
-import axios from "axios";
-import { generateSVG } from "./components/gradientAvatar";
+import { useMoralis } from 'react-moralis';
+import axios from 'axios';
+import  generateSVG from '../components/gradientAvatar';
 
 
 const Home = () => {
