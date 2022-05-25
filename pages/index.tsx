@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Player } from '../components/player';
+import Player  from '../components/player';
 import Davatar from '@davatar/react';
 import { useMoralis } from "react-moralis";
 import axios from "axios";
