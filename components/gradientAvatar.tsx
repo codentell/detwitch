@@ -14,13 +14,13 @@ export const generateColours = (s: string): [string, string] => {
     return [c1, c2];
 };
 
-export const generateSVG = (s: string, size = 70): string => {
+export const generateSVG = (s: string, size = 70) => {
     const [c1, c2] = generateColours(s);
 
-    return <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill="none" xmlns="http://www.w3.org/2000/svg">
+    return <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} fill={"none"} xmlns={"http://www.w3.org/2000/svg"}>
         <circle cx={`${size / 2}`} cy={`${size / 2}`} r={`${size / 2}`} fill={"url(#gradient)"} />
         <defs>
-            <linearGradient id={"gradient"} x1="0" y1="0" x2={`${size}`} y2={`${size}`} gradientUnits="userSpaceOnUse">
+            <linearGradient id={"gradient"} x1="0" y1="0" x2={`${size}`} y2={`${size}`} gradientUnits={"userSpaceOnUse"}>
                 <stop stopColor={`${c1}`} />
                 <stop offset={1} stopColor={`${c2}`} />
             </linearGradient>
