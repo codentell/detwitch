@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
 import { MoralisProvider, useMoralis } from 'react-moralis';
-import Link from 'next/link';
+
 
 const Navbar = () => {
     const { logout, user } = useMoralis();
