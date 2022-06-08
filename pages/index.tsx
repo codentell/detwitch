@@ -15,10 +15,6 @@ const Home = () => {
     const [inputStr, setInputStr] = useState('');
 
 
-
-
-
-
     const getData = async () => {
 
         try {
