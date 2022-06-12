@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 import Player  from '../components/player';
 import Login from '../components/login';
 import Davatar from '@davatar/react';
+import Chat from '../components/chat';
 import { useMoralis } from 'react-moralis';
+import randomWords from 'random-words'
 import axios from 'axios';
+
 import  generateSVG from '../components/gradientAvatar';
 
 
 const Home = () => {
     const { isAuthenticated, user, Moralis } = useMoralis();
-    const playbackURL = "https://livepeercdn.com/hls/9ed3fzyh3aqaanxa/index.m3u8"
+    const playbackURL = process.env.LIVEPEER_PLAYBACK_URL;
     const [isActive, setActive] = useState(false)
     const playerRef = React.useRef(null);
     const [inputStr, setInputStr] = useState('');
+    const [title, setTitle] = useState(randomWords(5).join(" "))
 
 
     const getData = async () => {
@@ -97,8 +101,8 @@ const Home = () => {
                             </div>
                         </div>
                         <div style={{ color: "white" }}>
-                            <h2>Title:</h2>
-                            <h3>author: {user.get("accounts")![0]}</h3>
+                            <h2>Title: {title.charAt(0).toUpperCase() + title.slice(1)}</h2>
+                            <h3>Description: {randomWords(5).join(" ") }</h3>
                         </div>
                     </section>
                 </div>
@@ -109,17 +113,18 @@ const Home = () => {
                             <p>Live Stream Chat</p>
                         </div>
                         <div className="stream-chat-content" style={{ height: "calc(100vh - 160px)", color: "white" }}>
-
+                                <Chat/>
                         </div>
                         <section className="stream-chat-input" style={{ height: "130px", display: "grid", gridTemplateRows: "1fr 1fr" }}>
-                            <div style={{ margin: "0px 10px" }}>
+                            {/* <div style={{ margin: "0px 10px" }}>
 
                                 <textarea style={{ background: "#464649", width: "100%", borderRadius: "4px", border: "2px solid transparent", resize: "none", color: "white", caretColor: "white" }} ></textarea>
                             </div>
                             <div style={{ display: "grid", gridTemplateColumns: "2fr 70px", padding: "0px 10px 10px 10px" }}>
                                 <div></div>
                                 <button style={{ color: "white", fontWeight: "bold", background: "#9146FF", width: "70px", border: "2px solid #9146FF", borderRadius: "3px", height: "30px" }} >Chat</button>
-                            </div>
+                            </div> */}
+                         
 
                         </section>
 

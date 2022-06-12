@@ -2,13 +2,13 @@ import '../styles/global.css'
 import { MoralisProvider } from 'react-moralis';
 import Navbar from '../components/navbar';
 
-const appID = "ZZ54tNjMceK0SIAFzmipBtf5T5Wa30rOsjrWmN9N";
-const serverUrl = "https://oojyu2xi0x8a.usemoralis.com:2053/server";
+// const appID = 'jBIXs8qDgrH7qcIVOk9Q7zqRwQX9JhDbxD3RpZ5E';
+// const serverUrl = 'https://oyfyipwo2rdn.usemoralis.com:2053/server';
 
 
 
 export default function MyApp({ Component, pageProps }) {
-  return (<MoralisProvider appId={appID} serverUrl={serverUrl}>
+  return (<MoralisProvider appId='qsCKafTgk7Qkz0EBERQboQDNQnziW7HDLrYGybU9' serverUrl='https://vxudzflk4mxl.usemoralis.com:2053/server'>
     <Navbar />
     <Component {...pageProps} />
   </MoralisProvider>);

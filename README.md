@@ -1,7 +1,7 @@
 # detwitch
 Decentralized Twitch 
 
-Built in 
+# Built in 
 * Next.js
 * Moralis
 * React 

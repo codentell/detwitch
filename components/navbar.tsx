@@ -6,7 +6,6 @@ const Navbar = () => {
     const { logout, user } = useMoralis();
     const [userAddress, setUserAddress] = useState('');
 
-    /// USE EFFECT ///
     useEffect(() => {
         if (user) setUserAddress(user.get("ethAddress"));
     });
