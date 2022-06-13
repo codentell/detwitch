@@ -13,15 +13,17 @@ const Player = (props) => {
       const videoElement = videoRef.current
       if (!videoElement) return
 
-      const player = (playerRef.current = videojs(videoElement, options, () => {
+      const player = videojs(videoElement, options, () => {
         console.log("player is ready")
         onReady && onReady(player)
-      }))
+      })
+      playerRef.current = player
     } else {
-      // you can update player here [update player through props]
-      // const player = playerRef.current;
+      // you can update player here [update player through props]. the only
+      // thing we really change right now is the source.
+      const player = playerRef.current
+      player.src(options.sources)
       // player.autoplay(options.autoplay);
-      // player.src(options.sources);
     }
   }, [options, videoRef])
 
