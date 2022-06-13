@@ -11,6 +11,7 @@ import generateSVG from "../components/gradientAvatar"
 
 const Home = () => {
   const { isAuthenticated, user, Moralis } = useMoralis()
+  // TODO: This should come from moralis db
   const streamId = process.env.LIVEPEER_STREAM_ID
   const [isActive, setActive] = useState(false)
   const [playbackUrl, setPlaybackUrl] = useState(null as string)
