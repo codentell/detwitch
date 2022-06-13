@@ -11,16 +11,20 @@ import generateSVG from "../components/gradientAvatar"
 
 const Home = () => {
   const { isAuthenticated, user, Moralis } = useMoralis()
-  const playbackURL = process.env.LIVEPEER_PLAYBACK_URL
+  const streamId = process.env.LIVEPEER_STREAM_ID
   const [isActive, setActive] = useState(false)
+  const [playbackUrl, setPlaybackUrl] = useState(null as string)
   const playerRef = React.useRef(null)
   const [inputStr, setInputStr] = useState("")
   const [title, setTitle] = useState(randomWords(5).join(" "))
 
   const getData = async () => {
     try {
-      const { data } = await axios.get("/api/active")
+      const { data } = await axios.get(`/api/stream/${streamId}`)
       console.log(data)
+      setPlaybackUrl(
+        `https://livepeercdn.com/hls/${data.playbackId}/index.m3u8`
+      )
       setActive(data.isActive)
     } catch (error) {}
   }
@@ -41,7 +45,7 @@ const Home = () => {
     width: 10,
     sources: [
       {
-        src: playbackURL,
+        src: playbackUrl,
         type: "application/x-mpegURL",
       },
     ],
