@@ -164,16 +164,7 @@ const Home = () => {
                 display: "grid",
                 gridTemplateRows: "1fr 1fr",
               }}
-            >
-              {/* <div style={{ margin: "0px 10px" }}>
-
-                                <textarea style={{ background: "#464649", width: "100%", borderRadius: "4px", border: "2px solid transparent", resize: "none", color: "white", caretColor: "white" }} ></textarea>
-                            </div>
-                            <div style={{ display: "grid", gridTemplateColumns: "2fr 70px", padding: "0px 10px 10px 10px" }}>
-                                <div></div>
-                                <button style={{ color: "white", fontWeight: "bold", background: "#9146FF", width: "70px", border: "2px solid #9146FF", borderRadius: "3px", height: "30px" }} >Chat</button>
-                            </div> */}
-            </section>
+            ></section>
           </div>
         </div>
       </section>
