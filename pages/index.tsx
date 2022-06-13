@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import Player from "../components/player"
 import Login from "../components/login"
 import Davatar from "@davatar/react"
@@ -35,21 +35,24 @@ const Home = () => {
     }
   }, [user, isActive])
 
-  const videoJsOptions = {
-    // lookup the options in the docs for more options
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    height: 10,
-    width: 10,
-    sources: [
-      {
-        src: playbackUrl,
-        type: "application/x-mpegURL",
-      },
-    ],
-  }
+  const videoJsOptions = useMemo(
+    () => ({
+      // lookup the options in the docs for more options
+      autoplay: true,
+      controls: true,
+      responsive: true,
+      fluid: true,
+      height: 10,
+      width: 10,
+      sources: [
+        {
+          src: playbackUrl,
+          type: "application/x-mpegURL",
+        },
+      ],
+    }),
+    [playbackUrl]
+  )
 
   const handlePlayerReady = (player) => {
     playerRef.current = player
